@@ -10,6 +10,7 @@
 //#include "HandOfCards.h"
 #include "Card.h"
 #include "Node.h"
+#include "LinkedList.h"
 using namespace std;
 
 int main()
@@ -22,6 +23,23 @@ int main()
 	
 	Node<Card>* test2 = new Node<Card>(test);
 	cout << *test2->getData() << endl;
+	
+	LinkedList<Card>* test3 = new LinkedList<Card>();
+	test = new Card(a, b, c);
+	test3->addToTail(test);
+	test = new Card(a, b, c);
+	test3->addToTail(test);
+	test = new Card(a, b, c);
+	test3->addToTail(test);
+	test = new Card(a, b, c);
+	test3->addToTail(test);
+	
+	cout << *test3->removeFromHead() << endl;
+	cout << *test3->removeFromHead() << endl;
+	cout << *test3->removeFromHead() << endl;
+	cout << *test3->removeFromHead() << endl;
+	
+	
 	/*DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;
 	deck.shuffle();
