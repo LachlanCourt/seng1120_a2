@@ -6,13 +6,20 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "DeckOfCards.h"
-#include "HandOfCards.h"
+//#include "DeckOfCards.h"
+//#include "HandOfCards.h"
+#include "Card.h"
 using namespace std;
 
 int main()
 {
-	DeckOfCards deck;
+	string* a = new string("10-H");
+	//cout << *a;
+	int* b = new int(10);
+	bool* c = new bool(true);
+	Card* test = new Card(a, b, c);
+	cout << *test;
+	/*DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;
 	deck.shuffle();
 	cout << "After shuffling: " << deck << endl;
@@ -63,6 +70,6 @@ int main()
 			if (player.count() < dealer.count()) {cout << "THE DEALER WON!" << endl; return 0;}
 		}
 	}
-		
+		*/
 	return 0;
 }

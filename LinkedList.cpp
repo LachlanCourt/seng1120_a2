@@ -6,7 +6,8 @@
 **************************************/
 
 
-//cd /cygdrive/C/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment1
+//cd /cygdrive/C/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment2
+//Node.h LinkedList.h Queue.h HandOfCards.cpp DeckOfCards.cpp
 
 #include <iostream>
 using namespace std;
