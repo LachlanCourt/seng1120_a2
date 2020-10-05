@@ -1,7 +1,7 @@
 CC=g++ 
 CFLAGS=-c -Wall -std=c++98
 LDFLAGS=
-SOURCES=BlackJackDemo.cpp Card.cpp 
+SOURCES=BlackJackDemo.cpp Card.cpp Node.h
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=a2
 

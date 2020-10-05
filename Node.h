@@ -10,12 +10,10 @@ using namespace std;
 #ifndef NODE_CLASS
 #define NODE_CLASS
 #include <string>
-
+template <typename value_type>
 class Node
 {
-	public:
-		typedef string value_type;
-		
+	public:		
 		//Constructors	
 		Node();
 		Node(Node* p, Node* n, value_type* i);
@@ -27,10 +25,10 @@ class Node
 		
 		//precondition: None
 		//postcondition: Function returns the pointer to the next Node object
-		Node* getNext() const;
+		Node<value_type>* getNext() const;
 		//precondition: None
 		//postcondition: Function returns the pointer to the previous Node object
-		Node* getPrev() const;
+		Node<value_type>* getPrev() const;
 		//precondition: Data should not be NULL
 		//postcondition: Function returns the pointer to the data
 		value_type* getData();
@@ -53,5 +51,5 @@ class Node
 		Node* next;
 		Node* prev;
 };
-
+#include "Node.hpp"
 #endif

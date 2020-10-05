@@ -9,6 +9,7 @@
 //#include "DeckOfCards.h"
 //#include "HandOfCards.h"
 #include "Card.h"
+#include "Node.h"
 using namespace std;
 
 int main()
@@ -18,7 +19,9 @@ int main()
 	int* b = new int(10);
 	bool* c = new bool(true);
 	Card* test = new Card(a, b, c);
-	cout << *test;
+	
+	Node<Card>* test2 = new Node<Card>(test);
+	cout << *test2->getData() << endl;
 	/*DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;
 	deck.shuffle();

@@ -6,20 +6,19 @@
 **************************************/
 
 #include <iostream>
-using namespace std;
-#include "Node.h"
-typedef Node::value_type value_type;
 
 // Default Constructor
-Node::Node()
+template <typename value_type>
+Node<value_type>::Node()
 {
 	next = NULL;
 	prev = NULL;
-	data = new value_type();
+	data = NULL;
 }
 
 // Initilise node with existing next and previous and data
-Node::Node(Node* p, Node* n, value_type* i)
+template <typename value_type>
+Node<value_type>::Node(Node* p, Node* n, value_type* i)
 {
 	next = n;
 	prev = p;
@@ -27,7 +26,8 @@ Node::Node(Node* p, Node* n, value_type* i)
 }
 
 // Initialise node with only data and NULL directional pointers that can be assigned later
-Node::Node(value_type* i)
+template <typename value_type>
+Node<value_type>::Node(value_type* i)
 {
 	next = NULL;
 	prev = NULL;
@@ -35,43 +35,50 @@ Node::Node(value_type* i)
 }
 
 // The pointers to other Nodes need to remain so only delete the Data
-Node::~Node()
+template <typename value_type>
+Node<value_type>::~Node()
 {
 	delete(data);
 }
 
 // Set the next pointer for the Node
-void Node::setNext(Node* n_)
+template <typename value_type>
+void Node<value_type>::setNext(Node* n_)
 {
 	next = n_;
 }
 
 // Set the previous pointer for the Node
-void Node::setPrev(Node* p_)
+template <typename value_type>
+void Node<value_type>::setPrev(Node* p_)
 {
 	prev = p_;
 }
 
 // Set the data pointer for the Node
-void Node::setData(value_type* data_)
+template <typename value_type>
+void Node<value_type>::setData(value_type* data_)
 {
 	data = data_;
 }
 
 // Query the next pointer for the Node
-Node* Node::getNext() const
+template <typename value_type>
+Node<value_type>* Node<value_type>::getNext() const
 {
 	return next;
 }
 
 // Query the previous pointer for the Node
-Node* Node::getPrev() const
+template <typename value_type>
+Node<value_type>* Node<value_type>::getPrev() const
 {
 	return prev;
 }
 
 // Query the data pointer for the Node
-value_type* Node::getData()
+template <typename value_type>
+value_type* Node<value_type>::getData()
 {
 	return data;
 }
