@@ -21,11 +21,12 @@ LinkedList<value_type>::LinkedList()
 	size = 0;
 }
 
-// Deconstructor
+// Destructor
+
 template <typename value_type>
 LinkedList<value_type>::~LinkedList()
 {
-	// Loop through until the head is not NULL and delete the head each time
+	// Loop through until the head is NULL and delete the head each time
 	while (head != NULL)
 	{	
 		// Keep track of the item in the list after the head
@@ -35,6 +36,7 @@ LinkedList<value_type>::~LinkedList()
 		// Set the head to what used to be the second item in the list
 		head = current;
 	}
+	
 }
 
 // Query the size of the list
@@ -56,6 +58,7 @@ void LinkedList<value_type>::addToTail(value_type* data_)
 		head = new Node<value_type>(data_);
 		// The list has one item so the tail and head are the same node
 		tail = head;
+		current = head;
 		// Increase the size of the list
 		size++;
 	}
@@ -69,11 +72,12 @@ void LinkedList<value_type>::addToTail(value_type* data_)
 		tail->setNext(current);
 		// Set the tail to the new node
 		tail = current;
+		
 		// Having just manipulated the current, reset it to head
 		jumpToHead();
 		// Increase the size of the list
 		size++;
-	}
+	}	
 }
 
 // Receives a string that will be removed from the Linked List
@@ -85,6 +89,7 @@ value_type LinkedList<value_type>::removeFromHead()
 	temp = *current->getData();
 	head = current->getNext();
 	delete(current);
+	size--;
 	if (head != NULL)
 	{
 		head->setPrev(NULL);
