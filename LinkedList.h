@@ -35,7 +35,7 @@ class LinkedList
 		void addToTail(value_type* data_);
 		//precondition: identifier cannot be NULL but can be empty
 		//postcondition: All items that match the specified identifier will be removed from the list
-		value_type* removeFromHead();
+		value_type removeFromHead();
 		
 		//****List traversing****//
 		

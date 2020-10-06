@@ -78,13 +78,24 @@ void LinkedList<value_type>::addToTail(value_type* data_)
 
 // Receives a string that will be removed from the Linked List
 template <typename value_type>
-value_type* LinkedList<value_type>::removeFromHead()
+value_type LinkedList<value_type>::removeFromHead()
 {
-	string* a = new string("10-H");
-	int* b = new int(10);
-	bool* c = new bool(true);
-	value_type* test = new value_type(a, b, c);
-	return test;
+	value_type temp;
+	jumpToHead();
+	temp = *current->getData();
+	head = current->getNext();
+	delete(current);
+	if (head != NULL)
+	{
+		head->setPrev(NULL);
+		current = head;
+	}
+	else
+	{
+		tail = NULL;
+		current = NULL;
+	}
+	return temp;
 }
 
 

@@ -15,10 +15,10 @@ using namespace std;
 
 int main()
 {
-	string* a = new string("10-H");
+	string a = "10-H";
 	//cout << *a;
-	int* b = new int(10);
-	bool* c = new bool(true);
+	int b = 10;
+	bool c = true;
 	Card* test = new Card(a, b, c);
 	
 	Node<Card>* test2 = new Node<Card>(test);
@@ -34,11 +34,14 @@ int main()
 	test = new Card(a, b, c);
 	test3->addToTail(test);
 	
-	cout << *test3->removeFromHead() << endl;
-	cout << *test3->removeFromHead() << endl;
-	cout << *test3->removeFromHead() << endl;
-	cout << *test3->removeFromHead() << endl;
-	
+	Card test4 = test3->removeFromHead();
+	cout << test4 << endl;
+	test4 = test3->removeFromHead();
+	cout << test4 << endl;
+	test4 = test3->removeFromHead();
+	cout << test4 << endl;
+	test4 = test3->removeFromHead();
+	cout << test4 << endl;
 	
 	/*DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;

@@ -9,26 +9,26 @@ class Card
 		public:
 			//Constructors	
 			Card();
-			Card(string* face_, int* value_, bool* faceUp_);
+			Card(string face_, int value_, bool faceUp_);
 			//Destructor
 			~Card();
 		
-			void setFace(string* face_);
+			void setFace(string face_);
 			
-			void setValue(int* value_);
+			void setValue(int value_);
 			
-			void setFaceUp(bool* faceUp_);
+			void setFaceUp(bool faceUp_);
 			
-			string* getFace() const;
+			string getFace() const;
 			
-			int* getValue() const;
+			int getValue() const;
 			
-			bool* getFaceUp() const;
+			bool getFaceUp() const;
 		
 		private:
-			string* face;
-			int* value;
-			bool* faceUp;
+			string face;
+			int value;
+			bool faceUp;
 };
 
 ostream& operator << (ostream& out, Card& temp);
