@@ -26,9 +26,11 @@ LinkedList<value_type>::LinkedList()
 template <typename value_type>
 LinkedList<value_type>::~LinkedList()
 {
+	/*
 	// Loop through until the head is NULL and delete the head each time
 	while (head != NULL)
 	{	
+		cout << "xyz";
 		// Keep track of the item in the list after the head
 		current = head->getNext();
 		// Delete head
@@ -36,7 +38,7 @@ LinkedList<value_type>::~LinkedList()
 		// Set the head to what used to be the second item in the list
 		head = current;
 	}
-	
+	*/
 }
 
 // Query the size of the list
@@ -100,6 +102,7 @@ value_type LinkedList<value_type>::removeFromHead()
 		tail = NULL;
 		current = NULL;
 	}
+	jumpToHead();
 	return temp;
 }
 

@@ -45,6 +45,7 @@ value_type Queue<value_type>::dequeue()
 		size--;
 		return data.removeFromHead();
 	}
+	cout << "Returning empty";
 	value_type temp = value_type();
 	return temp;
 }

@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <cstdlib>
-//#include "DeckOfCards.h"
+#include "DeckOfCards.h"
 //#include "HandOfCards.h"
 #include "Queue.h"
 #include "Card.h"
@@ -37,8 +37,51 @@ int main()
 	Card i = test.dequeue();
 	if (i.getValue() == -1)
 	{
-		cout << "Queue is empty";
+		cout << "Queue is empty\n";
 	}
+	
+	DeckOfCards deck = DeckOfCards();
+	cout << "shuffling" << endl;
+	deck.shuffle();
+	//cout << "test";
+	
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	h = deck.draw();
+	cout << h << endl;
+	
 	
 	/*DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;
