@@ -14,81 +14,12 @@ using namespace std;
 
 int main()
 {
-	string a = "10-H";
-	//cout << *a;
-	int b = 10;
-	bool c = true;
-	Card* d = new Card(a, b, c);
-	Card* e = new Card(a, b, c);
-	Card* f = new Card(a, b, c);
-	
-	Queue<Card> test;
-	test.enqueue(d);
-	test.enqueue(e);
-	test.enqueue(f);
-	cout << test.getSize() << endl;
-	Card g = *test.front();
-	cout << g << endl;
-	cout << test.getSize() << endl;
-	Card h = test.dequeue();
-	cout << h << endl;
-	test.dequeue();
-	test.dequeue();
-	Card i = test.dequeue();
-	if (i.getValue() == -1)
-	{
-		cout << "Queue is empty\n";
-	}
-	
-	DeckOfCards deck = DeckOfCards();
-	cout << "shuffling" << endl;
-	deck.shuffle();
-	//cout << "test";
-	
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	h = deck.draw();
-	cout << h << endl;
-	
-	
-	/*DeckOfCards deck;
+	DeckOfCards deck;
 	cout << "Initial deck: " << deck << endl;
 	deck.shuffle();
 	cout << "After shuffling: " << deck << endl;
 
-    HandOfCards player;
+    /*HandOfCards player;
 	HandOfCards dealer;
 	
 	// inititalize game

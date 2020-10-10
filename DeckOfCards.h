@@ -11,20 +11,22 @@ class DeckOfCards
 	public:
 		DeckOfCards();
 		DeckOfCards(bool shuffle);
-		DeckOfCards(bool shuffle, DeckOfCards& partialDeck);
+		DeckOfCards(bool output, DeckOfCards& partialDeck);
 		~DeckOfCards();
 		
 		void shuffle();
 		Card draw();
 		
+		void addCard(Card& cardToAdd);
 	private:
 		Queue<Card> deck;
 		
 		void addSuit(string suit);
-		void addCard(Card& cardToAdd);
 		DeckOfCards* getPartialDeck();
 		int getSize();
 	
 };
+
+ostream& operator << (ostream& out, DeckOfCards& temp);
 
 #endif

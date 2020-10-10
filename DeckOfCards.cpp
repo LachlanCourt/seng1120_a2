@@ -9,6 +9,7 @@ using namespace std;
 #include <string>
 #include <sstream>
 #include <stdlib.h>
+#include <time.h>
 
 DeckOfCards::DeckOfCards()
 {
@@ -22,7 +23,7 @@ DeckOfCards::DeckOfCards(bool shuffle)
 {
 }
 
-DeckOfCards::DeckOfCards(bool shuffle, DeckOfCards& partialDeck)
+DeckOfCards::DeckOfCards(bool output, DeckOfCards& partialDeck)
 {
     Card tempCard;
     int size = partialDeck.getSize();
@@ -30,6 +31,10 @@ DeckOfCards::DeckOfCards(bool shuffle, DeckOfCards& partialDeck)
     {
         tempCard = partialDeck.draw();
         addCard(tempCard);
+		if (output)
+		{
+			partialDeck.addCard(tempCard);
+		}
     }
 }
 
@@ -65,12 +70,13 @@ void DeckOfCards::shuffle()
     int rand(void);
     DeckOfCards tempDeck = DeckOfCards(true);
     DeckOfCards* tempDeckPtr;
+	srand(time(NULL));
     for (int i = 0; i < 1000; i++)
     {
         for (int i = 0; i <= rand() % 4; i++)
         {
             tempDeck = queueOfDecks.dequeue();
-            tempDeckPtr = new DeckOfCards(true, tempDeck);
+            tempDeckPtr = new DeckOfCards(false, tempDeck);
             queueOfDecks.enqueue(tempDeckPtr);
         }
 
@@ -80,17 +86,16 @@ void DeckOfCards::shuffle()
         {
             continue;
         }
-
         for (int i = 0; i < rand() % 4; i++)
         {
             tempDeck = queueOfDecks.dequeue();
-            tempDeckPtr = new DeckOfCards(true, tempDeck);
+            tempDeckPtr = new DeckOfCards(false, tempDeck);
             queueOfDecks.enqueue(tempDeckPtr);
         }
 
         tempDeck = queueOfDecks.dequeue();
         tempDeck.addCard(tempCard);
-        tempDeckPtr = new DeckOfCards(true, tempDeck);
+        tempDeckPtr = new DeckOfCards(false, tempDeck);
         queueOfDecks.enqueue(tempDeckPtr);
     }
 
@@ -98,7 +103,8 @@ void DeckOfCards::shuffle()
     for (int i = 0; i < 4; i++)
     {
         tempDeck = queueOfDecks.dequeue();
-        for (int j = 0; j < 13; j++)
+        int size = tempDeck.getSize();
+        for (int j = 0; j < size; j++)
         {
             tempCard = tempDeck.draw();
             addCard(tempCard);
@@ -316,4 +322,17 @@ void DeckOfCards::addSuit(string suit)
 int DeckOfCards::getSize()
 {
     return deck.getSize();
+}
+
+ostream& operator << (ostream& out, DeckOfCards& temp)
+{
+	DeckOfCards tempDeck = DeckOfCards(true, temp);
+	Card tempCard;
+	out << endl;
+	for (int i = 0; i < 52; i++)
+	{	
+		tempCard = tempDeck.draw();
+		out << tempCard;
+	}
+	return out;
 }
