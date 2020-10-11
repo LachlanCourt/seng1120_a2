@@ -278,13 +278,8 @@ Card DeckOfCards::draw()
 
 void DeckOfCards::addCard(Card &cardToAdd)
 {
-    Card *cardToAdd2 = new Card(cardToAdd.getFace(), cardToAdd.getValue(), cardToAdd.getFaceUp());
-    //cout << *cardToAdd2;
+    Card* cardToAdd2 = new Card(cardToAdd.getFace(), cardToAdd.getValue(), cardToAdd.getFaceUp());
     deck.enqueue(cardToAdd2);
-    //cardToAdd2 = NULL;
-    //cout << "beep";
-    cardToAdd2 = deck.front();
-    //cout << *cardToAdd2 << deck.getSize();
 }
 
 void DeckOfCards::addSuit(string suit)

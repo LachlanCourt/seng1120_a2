@@ -7,9 +7,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "DeckOfCards.h"
-//#include "HandOfCards.h"
-#include "Queue.h"
-#include "Card.h"
+#include "HandOfCards.h"
 using namespace std;
 
 int main()
@@ -19,7 +17,7 @@ int main()
 	deck.shuffle();
 	cout << "After shuffling: " << deck << endl;
 
-    /*HandOfCards player;
+    HandOfCards player;
 	HandOfCards dealer;
 	
 	// inititalize game
@@ -65,6 +63,6 @@ int main()
 			if (player.count() < dealer.count()) {cout << "THE DEALER WON!" << endl; return 0;}
 		}
 	}
-		*/
+		
 	return 0;
 }

@@ -1,9 +1,9 @@
 CC=g++ 
 CFLAGS=-c -Wall -std=c++98
 LDFLAGS=
-SOURCES=BlackJackDemo.cpp Card.cpp Node.h LinkedList.h Queue.h DeckOfCards.cpp
+SOURCES=BlackJackDemo.cpp Card.cpp Node.h LinkedList.h Queue.h HandOfCards.cpp DeckOfCards.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=a2
+EXECUTABLE=assignment2
 
 all: $(SOURCES) $(EXECUTABLE)
 	
