@@ -1,8 +1,8 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 13/09/2020
-**** SENG1120 Assignment 1
+**** 17/10/2020
+**** SENG1120 Assignment 2
 **************************************/
 
 #include <iostream>
@@ -38,6 +38,8 @@ Node<value_type>::Node(value_type* i)
 template <typename value_type>
 Node<value_type>::~Node()
 {
+	next = NULL;
+	prev = NULL;
 	delete(data);
 }
 
