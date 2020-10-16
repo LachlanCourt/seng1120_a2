@@ -9,6 +9,11 @@ HandOfCards::HandOfCards()
 {
 	
 }
+
+HandOfCards::~HandOfCards()
+{
+	
+}
 		
 int HandOfCards::count()
 {
@@ -26,6 +31,7 @@ int HandOfCards::count()
 	}
 	return score;
 }
+
 int HandOfCards::countAll()
 {
 	int handSize = getSize();
@@ -39,6 +45,7 @@ int HandOfCards::countAll()
 	}
 	return score;
 }
+
 string HandOfCards::value()
 {
 	int handSize = getSize();

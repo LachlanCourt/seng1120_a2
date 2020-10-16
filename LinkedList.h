@@ -17,9 +17,9 @@ class LinkedList
 	
 	public:
 		
-		//Constructor
+		//****Constructor****//
 		LinkedList();
-		//Destructor
+		//****Destructor****//
 		~LinkedList();
 		
 		//****Queries****//
@@ -33,8 +33,8 @@ class LinkedList
 		//precondition: None (Empty list possibility is checked during function)
 		//postcondition: Linked List has data added as a new node at the end of the list
 		void addToTail(value_type* data_);
-		//precondition: identifier cannot be NULL but can be empty
-		//postcondition: All items that match the specified identifier will be removed from the list
+		//precondition: None (Empty list possibility is checked during function)
+		//postcondition: The first item in the list will be removed and returned
 		value_type removeFromHead();
 		
 		//****List traversing****//
@@ -61,10 +61,6 @@ class LinkedList
 		Node<value_type>* tail;
 		Node<value_type>* current;
 		int size;
-		
-		//****Private methods****//
-
-		void deleteCurrent();
 };
 #include "LinkedList.hpp"
 #endif

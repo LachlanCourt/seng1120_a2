@@ -10,25 +10,26 @@ class Queue
 {
 	public:
 		
-		//Constructor
+		//****Constructor****//
 		Queue();
-		//Destructor
+		//****Destructor****//
 		~Queue();
 		
 		//****Queries****//
 		
 		//precondition: None
-		//postcondition: Function returns the size of the Linked List
+		//postcondition: Function returns the size of the Queue
 		int getSize() const;
 		
 		value_type* front();
+		
 		//****Data manipulation****//
 		
-		//precondition: None (Empty list possibility is checked during function)
-		//postcondition: Linked List has data added as a new node at the end of the list
+		//precondition: None
+		//postcondition: The Linked List stored inside the Queue has data added as a new node at the end of the list
 		void enqueue(value_type* data_);
 		//precondition: identifier cannot be NULL but can be empty
-		//postcondition: All items that match the specified identifier will be removed from the list
+		//postcondition: The first item in the Linked List stored inside the Queue will be removed and returned
 		value_type dequeue();
 		
 	private:

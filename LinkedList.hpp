@@ -166,46 +166,6 @@ value_type* LinkedList<value_type>::getCurrent() const
 	return current->getData();
 }
 
-template <typename value_type>
-void LinkedList<value_type>::deleteCurrent()
-{
-			// If there is one item in the list
-			if (head == tail)
-			{
-				// Reset the head and tail as the list is about to become empty
-				head = NULL;
-				tail = NULL;
-			}
-			// If the first item in the list
-			else if (current == head)
-			{
-				// Set the head to the second item in the list as the first is about to be removed
-				head = current->getNext();
-				head->setPrev(NULL);
-		
-			}
-			// If the last item in the list
-			else if (current == tail)
-			{
-				// Set the tail to the second last item in the list as the last is about to be removed
-				tail = current->getPrev();
-				tail->setNext(NULL);
-		
-			}
-			// The list has more than one item and the item to be removed is not at the head or tail
-			else
-			{
-				// Link the node before the current to the node after the current
-				current->getPrev()->setNext(current->getNext());
-				current->getNext()->setPrev(current->getPrev());
-			}
-			// Delete the current and decrement the size
-			delete(current);
-			size--;
-			// current has just been deleted so reset it to the head and start the loop over
-			jumpToHead();
-}
-
 
 
 

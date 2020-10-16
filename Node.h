@@ -14,11 +14,11 @@ template <typename value_type>
 class Node
 {
 	public:		
-		//Constructors	
+		//****Constructors****//
 		Node();
 		Node(Node* p, Node* n, value_type* i);
 		Node(value_type* i);
-		//Destructor
+		//****Destructor****//
 		~Node();
 		
 		//****Queries****//
