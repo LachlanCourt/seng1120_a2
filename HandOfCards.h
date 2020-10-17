@@ -6,6 +6,8 @@ using namespace std;
 #ifndef HANDOFCARDS_CLASS
 #define HANDOFCARDS_CLASS
 
+//cd /cygdrive/C/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment2
+
 class HandOfCards
 {
 	public:

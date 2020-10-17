@@ -45,7 +45,6 @@ DeckOfCards::~DeckOfCards()
 
 void DeckOfCards::shuffle()
 {
-    Queue<DeckOfCards> queueOfDecks = Queue<DeckOfCards>();
     DeckOfCards *tempDeck1 = new DeckOfCards(true);
     DeckOfCards *tempDeck2 = new DeckOfCards(true);
     DeckOfCards *tempDeck3 = new DeckOfCards(true);
@@ -62,54 +61,78 @@ void DeckOfCards::shuffle()
         tempCard = draw();
         tempDeck4->addCard(tempCard);
     }
-    queueOfDecks.enqueue(tempDeck1);
-    queueOfDecks.enqueue(tempDeck2);
-    queueOfDecks.enqueue(tempDeck3);
-    queueOfDecks.enqueue(tempDeck4);
 //-----------------------
     int rand(void);
-    DeckOfCards tempDeck = DeckOfCards(true);
-    DeckOfCards* tempDeckPtr;
 	srand(time(NULL));
+	int randDeck;
     for (int i = 0; i < 1000; i++)
     {
-        for (int i = 0; i <= rand() % 4; i++)
-        {
-            tempDeck = queueOfDecks.dequeue();
-            tempDeckPtr = new DeckOfCards(false, tempDeck);
-            queueOfDecks.enqueue(tempDeckPtr);
-        }
-
-        tempCard = queueOfDecks.front()->draw();
+		randDeck = rand() % 4;
+		switch(randDeck)
+		{
+			case 0:
+				tempCard = tempDeck1->draw();
+				break;
+			case 1:
+				tempCard = tempDeck2->draw();
+				break;
+			case 2:
+				tempCard = tempDeck3->draw();
+				break;
+			default:
+				tempCard = tempDeck4->draw();
+		}
 
         if (tempCard.getValue() == -1)
         {
+			cout << "here";
             continue;
         }
-        for (int i = 0; i < rand() % 4; i++)
-        {
-            tempDeck = queueOfDecks.dequeue();
-            tempDeckPtr = new DeckOfCards(false, tempDeck);
-            queueOfDecks.enqueue(tempDeckPtr);
-        }
-
-        tempDeck = queueOfDecks.dequeue();
-        tempDeck.addCard(tempCard);
-        tempDeckPtr = new DeckOfCards(false, tempDeck);
-        queueOfDecks.enqueue(tempDeckPtr);
+		
+		randDeck = rand() % 4;
+		switch(randDeck)
+		{
+			case 0:
+				tempDeck1->addCard(tempCard);
+				break;
+			case 1:
+				tempDeck2->addCard(tempCard);
+				break;
+			case 2:
+				tempDeck3->addCard(tempCard);
+				break;
+			default:
+				tempDeck4->addCard(tempCard);
+		}
     }
 
 //------------------------
-    for (int i = 0; i < 4; i++)
+    
+    int size = tempDeck1->getSize();
+    for (int j = 0; j < size; j++)
     {
-        tempDeck = queueOfDecks.dequeue();
-        int size = tempDeck.getSize();
-        for (int j = 0; j < size; j++)
-        {
-            tempCard = tempDeck.draw();
-            addCard(tempCard);
-        }
+        tempCard = tempDeck1->draw();
+        addCard(tempCard);
     }
+	size = tempDeck2->getSize();
+    for (int j = 0; j < size; j++)
+    {
+        tempCard = tempDeck2->draw();
+        addCard(tempCard);
+    }
+	size = tempDeck3->getSize();
+    for (int j = 0; j < size; j++)
+    {
+        tempCard = tempDeck3->draw();
+        addCard(tempCard);
+    }
+	size = tempDeck4->getSize();
+    for (int j = 0; j < size; j++)
+    {
+        tempCard = tempDeck4->draw();
+        addCard(tempCard);
+    }
+    
 
 
 }

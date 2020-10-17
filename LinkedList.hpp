@@ -1,13 +1,9 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 13/09/2020
-**** SENG1120 Assignment 1
+**** 17/10/2020
+**** SENG1120 Assignment 2
 **************************************/
-
-
-//cd /cygdrive/C/Users/lachl/OneDrive/Documents/Uni/SENG1120_Assessment/Assignment2
-//Node.h LinkedList.h Queue.h HandOfCards.cpp DeckOfCards.cpp
 
 #include <iostream>
 
@@ -26,11 +22,10 @@ LinkedList<value_type>::LinkedList()
 template <typename value_type>
 LinkedList<value_type>::~LinkedList()
 {
-	/*
+	
 	// Loop through until the head is NULL and delete the head each time
 	while (head != NULL)
-	{	
-		cout << "xyz";
+	{
 		// Keep track of the item in the list after the head
 		current = head->getNext();
 		// Delete head
@@ -38,7 +33,7 @@ LinkedList<value_type>::~LinkedList()
 		// Set the head to what used to be the second item in the list
 		head = current;
 	}
-	*/
+	
 }
 
 // Query the size of the list
@@ -86,9 +81,10 @@ void LinkedList<value_type>::addToTail(value_type* data_)
 template <typename value_type>
 value_type LinkedList<value_type>::removeFromHead()
 {
-	value_type temp;
 	jumpToHead();
-	temp = *current->getData();
+	value_type temp  = *current->getData();
+	
+	
 	head = current->getNext();
 	delete(current);
 	size--;
@@ -109,7 +105,7 @@ value_type LinkedList<value_type>::removeFromHead()
 
 // Resets current to head
 template <typename value_type>
-int LinkedList<value_type>::jumpToHead()
+const int LinkedList<value_type>::jumpToHead()
 {
 	current = head;
 	// Return -1 if current is now NULL - indicating list is empty
@@ -122,7 +118,7 @@ int LinkedList<value_type>::jumpToHead()
 
 // Resets current to tail
 template <typename value_type>
-int LinkedList<value_type>::jumpToTail()
+const int LinkedList<value_type>::jumpToTail()
 {
 	current = tail;
 	// Return -1 if current is now NULL - indicating list is empty
@@ -135,7 +131,7 @@ int LinkedList<value_type>::jumpToTail()
 
 // Moves current to the next Node in the list
 template <typename value_type>
-int LinkedList<value_type>::moveNext()
+const int LinkedList<value_type>::moveNext()
 {
 	current = current->getNext();
 	// Return -1 if current is now NULL - reached the end of the list
@@ -148,7 +144,7 @@ int LinkedList<value_type>::moveNext()
 
 // Moves current to the previous Node in the list
 template <typename value_type>
-int LinkedList<value_type>::movePrev()
+const int LinkedList<value_type>::movePrev()
 {
 	current = current->getPrev();
 	// Return -1 if current is now NULL - reached the start of the list

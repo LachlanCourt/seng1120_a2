@@ -26,7 +26,7 @@ class DeckOfCards
 		//postcondition: The top card of the deck is removed and returned
 		Card draw();
 		//precondition: None
-		//postcondition: A card is aded to the bottom of the deck
+		//postcondition: A card is added to the bottom of the deck
 		void addCard(Card& cardToAdd);
 	private:
 		//****Instance variables****//

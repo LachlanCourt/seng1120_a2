@@ -1,8 +1,8 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 13/09/2020
-**** SENG1120 Assignment 1
+**** 17/10/2020
+**** SENG1120 Assignment 2
 **************************************/
 
 #include <iostream>
@@ -41,16 +41,16 @@ class LinkedList
 		
 		//precondition: None
 		//postcondition: Linked List current is set to head, returns -1 if list is empty and 0 if successful
-		int jumpToHead();
+		const int jumpToHead();
 		//precondition: None
 		//postcondition: Linked List current is set to tail, returns -1 if list is empty and 0 if successful
-		int jumpToTail();
+		const int jumpToTail();
 		//precondition: Linked List current cannot be NULL
 		//postcondition: Linked List current is set to the value of it's next, returns -1 if current is now NULL and 0 if successful
-		int moveNext();
+		const int moveNext();
 		//precondition: Linked List current cannot be NULL
 		//postcondition: Linked List current is set to the value of it's previous, returns -1 if current is now NULL and 0 if successful
-		int movePrev();
+		const int movePrev();
 		//precondition: Linked List current cannot be NULL
 		//postcondition: Returns the pointer to the data of the current Node
 		value_type* getCurrent() const;
