@@ -1,10 +1,16 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 18/10/2020
+**** SENG1120 Assignment 2
+**************************************/
+
 #include <iostream>
 
 using namespace std;
 
 #include "DeckOfCards.h"
 #include "Queue.h"
-#include "LinkedList.h"
 #include "Card.h"
 #include <string>
 #include <sstream>
@@ -85,7 +91,6 @@ void DeckOfCards::shuffle()
 
         if (tempCard.getValue() == -1)
         {
-			cout << "here";
             continue;
         }
 		

@@ -18,7 +18,6 @@ LinkedList<value_type>::LinkedList()
 }
 
 // Destructor
-
 template <typename value_type>
 LinkedList<value_type>::~LinkedList()
 {
@@ -38,7 +37,7 @@ LinkedList<value_type>::~LinkedList()
 
 // Query the size of the list
 template <typename value_type>
-int LinkedList<value_type>::getSize() const
+const int LinkedList<value_type>::getSize() const
 {
 	return size;
 }
@@ -77,27 +76,32 @@ void LinkedList<value_type>::addToTail(value_type* data_)
 	}	
 }
 
-// Receives a string that will be removed from the Linked List
+// Removes the first item in the linked list and returns it
 template <typename value_type>
 value_type LinkedList<value_type>::removeFromHead()
 {
+	// Reset the current pointer to head
 	jumpToHead();
+	// Save the data in the first position to a temporary variable
 	value_type temp  = *current->getData();
-	
-	
+	// Move the head to the next spot in the list
 	head = current->getNext();
+	// Delete the old head and decrement the size
 	delete(current);
 	size--;
 	if (head != NULL)
 	{
+		// If the list is not empty, remove the invalid pointer in the new head, and reset the current
 		head->setPrev(NULL);
 		current = head;
 	}
 	else
 	{
+		// If the list is empty, set all pointers to NULL
 		tail = NULL;
 		current = NULL;
 	}
+	// Reset the current pointer to head and return the data
 	jumpToHead();
 	return temp;
 }

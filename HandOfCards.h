@@ -1,3 +1,10 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 18/10/2020
+**** SENG1120 Assignment 2
+**************************************/
+
 #include <iostream>
 using namespace std;
 #include "Queue.h"
@@ -20,13 +27,13 @@ class HandOfCards
 		
 		//precondition: None
 		//postcondition: Returns the score of all cards in the hand where faceUp is true
-		int count();
+		const int count();
 		//precondition: None
 		//postcondition: Returns the score of all cards in the hand
-		int countAll();
+		const int countAll();
 		//precondition: None
 		//postcondition: Returns the cards in readable form, cards where faceUp is false show up as "?-?"
-		string value();
+		const string value();
 		
 		//****Data manipulation****//
 		
@@ -35,7 +42,7 @@ class HandOfCards
 		void faceUp();
 		//precondition: None
 		//postcondition: Card will be added to the hand with the faceUp value matching the argument
-		void add(Card cardToAdd, bool faceUp_);
+		void add(const Card cardToAdd, const bool faceUp_);
 		
 		
 	
@@ -47,10 +54,10 @@ class HandOfCards
 		
 		//precondition: None
 		//postcondition: Returns the number of cards in the hand
-		int getSize();
+		const int getSize() const;
 		//precondition: None
 		//postcondition: Card will be added to the hand
-		void addCard(Card &cardToAdd);
+		void addCard(const Card &cardToAdd);
 		//precondition: None (Hand can be empty, it will just return a default blank card if so)
 		//postcondition: The top card of the hand is removed and returned
 		Card draw();

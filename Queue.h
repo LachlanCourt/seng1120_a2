@@ -1,3 +1,10 @@
+/*************************************
+**** Lachlan Court
+**** c3308061
+**** 18/10/2020
+**** SENG1120 Assignment 2
+**************************************/
+
 #include <iostream>
 using namespace std;
 
@@ -19,7 +26,7 @@ class Queue
 		
 		//precondition: None
 		//postcondition: Function returns the size of the Queue
-		int getSize() const;
+		const int getSize() const;
 		
 		value_type* front();
 		

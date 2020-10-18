@@ -26,14 +26,14 @@ class LinkedList
 		
 		//precondition: None
 		//postcondition: Function returns the size of the Linked List
-		int getSize() const;
+		const int getSize() const;
 		
 		//****Data manipulation****//
 		
 		//precondition: None (Empty list possibility is checked during function)
 		//postcondition: Linked List has data added as a new node at the end of the list
 		void addToTail(value_type* data_);
-		//precondition: None (Empty list possibility is checked during function)
+		//precondition: Linked List cannot be empty
 		//postcondition: The first item in the list will be removed and returned
 		value_type removeFromHead();
 		
