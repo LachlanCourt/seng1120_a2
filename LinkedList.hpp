@@ -1,7 +1,7 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 17/10/2020
+**** 19/10/2020
 **** SENG1120 Assignment 2
 **************************************/
 
@@ -21,7 +21,6 @@ LinkedList<value_type>::LinkedList()
 template <typename value_type>
 LinkedList<value_type>::~LinkedList()
 {
-	
 	// Loop through until the head is NULL and delete the head each time
 	while (head != NULL)
 	{
@@ -32,7 +31,7 @@ LinkedList<value_type>::~LinkedList()
 		// Set the head to what used to be the second item in the list
 		head = current;
 	}
-	
+	tail = NULL;
 }
 
 // Query the size of the list

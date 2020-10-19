@@ -1,7 +1,7 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 18/10/2020
+**** 19/10/2020
 **** SENG1120 Assignment 2
 **************************************/
 
@@ -21,7 +21,7 @@ HandOfCards::HandOfCards()
 // Destructor
 HandOfCards::~HandOfCards()
 {
-	
+	// The only instance variable is "data" which is stored on the stack
 }
 
 // Counts the value of all the face up cards in a hand
@@ -90,11 +90,13 @@ const string HandOfCards::value()
 		else
 		{
 			// If the card is face down, print ?-? instead of the face
-			stream << "?-?	";
+			stream << "?-?	" << endl << "	";
 		}
 		// Add the card into the hand again at the back
 		addCard(tempCard);
 	}
+	// Add the score of the hand
+	stream << "Score: " << count() << " points" << endl;
 	// Convert the stringstream to a string and return
 	string str;
 	str = stream.str();
@@ -141,6 +143,7 @@ void HandOfCards::addCard(const Card &cardToAdd)
     Card* cardToAdd2 = new Card(cardToAdd.getFace(), cardToAdd.getValue(), cardToAdd.getFaceUp());
 	// Add the card to the queue
     data.enqueue(cardToAdd2);
+	cardToAdd2 = NULL;
 }
 
 // Takes a card from the hand

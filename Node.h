@@ -1,7 +1,7 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 17/10/2020
+**** 19/10/2020
 **** SENG1120 Assignment 2
 **************************************/
 
@@ -37,10 +37,10 @@ class Node
 	
 		//precondition: None
 		//postcondition: Node's next variable will be a pointer to the next Node object
-		void setNext(Node* n_);
+		void setNext(Node<value_type>* n_);
 		//precondition: None
 		//postcondition: Node's previous variable will be a pointer to the next Node object
-		void setPrev(Node* p_);
+		void setPrev(Node<value_type>* p_);
 		//precondition: None
 		//postcondition: Node's data variable will be a pointer to data on the heap
 		void setData(value_type* data_);

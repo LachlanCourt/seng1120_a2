@@ -1,7 +1,7 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 17/10/2020
+**** 19/10/2020
 **** SENG1120 Assignment 2
 **************************************/
 
@@ -45,14 +45,14 @@ Node<value_type>::~Node()
 
 // Set the next pointer for the Node
 template <typename value_type>
-void Node<value_type>::setNext(Node* n_)
+void Node<value_type>::setNext(Node<value_type>* n_)
 {
 	next = n_;
 }
 
 // Set the previous pointer for the Node
 template <typename value_type>
-void Node<value_type>::setPrev(Node* p_)
+void Node<value_type>::setPrev(Node<value_type>* p_)
 {
 	prev = p_;
 }

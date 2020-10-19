@@ -1,7 +1,7 @@
 /*************************************
 **** Lachlan Court
 **** c3308061
-**** 18/10/2020
+**** 19/10/2020
 **** SENG1120 Assignment 2
 **************************************/
 
@@ -18,7 +18,7 @@ Queue<value_type>::Queue()
 template <typename value_type>	
 Queue<value_type>::~Queue()
 {
-	
+	// The only instance variable is the LinkedList "data" which is stored on the stack
 }
 
 // Returns the size of the queue
